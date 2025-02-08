@@ -1,0 +1,65 @@
+/********** Dropdown ***********/
+@use "../abstract/" as *;
+.custom-dropdown {
+  position: relative;
+  &-btn {
+    border: none;
+    background: transparent;
+    color: #fff;
+    font: 2rem $font-medium;
+    color: #ffffff;
+    i {
+      margin-left: 1.4rem;
+      transition: all 0.3s ease-in-out;
+    }
+  }
+  &-menu {
+    opacity: 0;
+    display: flex;
+    flex-wrap: wrap;
+    height: 0;
+    visibility: hidden;
+    padding: 0;
+    background-color: #f1f1f1;
+    position: absolute;
+    top: 100%;
+    width: 100%;
+    right: 0;
+    z-index: 10;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    transition: opacity 0.3s ease-in-out, padding 0.3s ease-in-out, height 0.3s ease-in-out, visibility 0.3s ease-in-out;
+    li {
+      margin-right: 0 !important;
+      flex-basis: 100%;
+      text-align: center;
+      font-size: 1.4rem;
+      color: $theme--violet;
+      font-family: $font-regular;
+    }
+  }
+}
+.sort-effect {
+  .custom-dropdown-menu {
+    opacity: 1;
+    height: 15rem;
+    overflow-y: auto;
+    visibility: visible;
+  }
+  i {
+    transform: rotate(-180deg);
+  }
+}
+@include media(1799px) {
+  .custom-dropdown-btn {
+    font-size: 1.6rem;
+  }
+  .custom-dropdown-btn i {
+    margin-left: 0.8rem;
+  }
+}
+@include media(1399px) {
+  .custom-dropdown-btn {
+    font-size: 1.4rem;
+  }
+}

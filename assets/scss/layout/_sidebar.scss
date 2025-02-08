@@ -1,0 +1,43 @@
+@use "../abstract/" as *;
+aside {
+  position: fixed;
+  height: 100%;
+  background: $theme--violet;
+  z-index: -1;
+  top: 0;
+  width: 0;
+  right: 0;
+  display: none;
+  opacity: 0;
+  transition: all 0.5s ease-in-out;
+}
+.aside--width {
+  width: calc(100% - 65rem);
+  opacity: 1;
+  z-index: 200;
+}
+.asideClose {
+  .btn {
+    font-size: 2.4rem;
+  }
+}
+@include media(1199px) {
+  aside {
+    display: block;
+  }
+}
+@include media(991px) {
+  .aside--width {
+    width: calc(100% - 45rem);
+  }
+}
+@include media(767px) {
+  .aside--width {
+    width: calc(100% - 25rem);
+  }
+}
+@include media(575px) {
+  .aside--width {
+    width: calc(100% - 5rem);
+  }
+}

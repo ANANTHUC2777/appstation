@@ -1,0 +1,46 @@
+@media (min-width:1200px) {
+    .responsive-tabs .dropdown-arrow {
+        display: none; 
+    } 
+}
+
+@media screen and (max-width: 1199px) {
+    .responsive-tabs {
+        position: relative; 
+        border: 1px solid #ccc;
+        border-bottom: 1px solid #ccc!important;
+        .nav-link.active{
+            padding: 15px!important;
+        }
+    }
+    .responsive-tabs li {
+        width: 100%; 
+        margin: 0 !important; 
+    }
+    .responsive-tabs li > button {
+        display: none; 
+        border: 0 !important; 
+        border-radius: 0 !important;
+    }
+    .responsive-tabs.open li > button, .responsive-tabs li > button.active {
+        display: block;
+    }
+    .responsive-tabs .dropdown-arrow { 
+        position: absolute;
+        top: 15px;
+        right: 15px; 
+        border: solid rgb(255, 255, 255);
+        border-width: 0 3px 3px 0;
+        display: inline-block;
+        padding: 3px;
+        vertical-align: middle;
+        transform: rotate(45deg);
+        -webkit-transform: rotate(45deg);
+        transition: all ease .5s;
+        cursor: pointer; 
+    }
+    .responsive-tabs.open .dropdown-arrow {
+        transform: rotate(-135deg);
+        transition: all ease .5s; 
+    } 
+}  

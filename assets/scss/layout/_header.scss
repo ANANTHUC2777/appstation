@@ -1,0 +1,207 @@
+/********* HEADER *********/
+@use "../abstract/" as *;
+@use "../vendors/hamburger" as *;
+.custom-nav {
+  background: $theme--violet;
+  position: relative;
+  &::after {
+    position: absolute;
+    width: 100%;
+    height: 0.1rem;
+    background: $white;
+    content: "";
+    top: 61%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+  &Logo {
+    justify-content: space-between;
+    width: 100%;
+    padding-top: 3.25rem;
+    padding-bottom: 3.25rem;
+    align-items: center;
+    display: flex;
+    &-leftCol {
+      a {
+        font-size: 2.4rem;
+        color: $white;
+        margin-right: 0;
+        font-family: $font-medium;
+      }
+    }
+    &-rightCol {
+      gap: 3.2rem;
+      display: flex;
+      align-items: center;
+      &Search {
+        position: relative;
+        input {
+          padding: 1rem 1rem 1rem 4.2rem;
+          border: 2px solid $brdr-color;
+          border-radius: 5rem;
+          background: $theme--light--violet;
+          font: 2rem $font-thin;
+          max-height: 4.5rem;
+          max-width: 27.2rem;
+          color: $white;
+        }
+        img {
+          position: absolute;
+          max-width: 1.8rem;
+          left: 1.5rem;
+          top: 1.3rem;
+          margin-right: 1.2rem;
+        }
+      }
+      &Country {
+        align-items: center;
+        gap: 1rem;
+        display: flex;
+        img {
+          width: 4.5rem;
+          height: 4.5rem;
+        }
+        p {
+          font: 2rem $font-thin;
+          color: $white;
+        }
+      }
+      &Ticket {
+        a {
+          display: block;
+          max-width: 13.3rem;
+          img {
+            width: 100%;
+          }
+        }
+      }
+    }
+  }
+  &Menu {
+    justify-content: space-between;
+    width: 100%;
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+    display: flex;
+    ul {
+      display: flex;
+      align-items: center;
+      li {
+        &:not(:last-child) {
+          margin-right: 2.4rem;
+        }
+        transition: all 0.3s ease-in-out;
+        &:hover {
+          transform: translateY(-2px);
+        }
+        a {
+          font: 2rem $font-medium;
+          color: $white;
+          text-transform: capitalize;
+          transition: color 0.3s ease-in-out;
+        }
+        &.custom-dropdown-li {
+          border-bottom: none !important;
+        }
+      }
+    }
+    &-contact {
+      a {
+        display: block;
+        font: 2rem $font-medium;
+        color: $white;
+        text-transform: capitalize;
+        transition: all 0.3s ease-in-out;
+        img {
+          width: 2.5rem;
+          height: 2.5rem;
+        }
+        &:hover {
+          transform: translateY(-2px);
+        }
+      }
+    }
+  }
+}
+
+@include media(1799px) {
+  .custom-navMenu ul li a,
+  .custom-navMenu-contact a {
+    font-size: 1.6rem;
+  }
+  .custom-navMenu ul li:not(:last-child) {
+    margin-right: 1.6rem;
+  }
+}
+@include media(1399px) {
+  .custom-navMenu ul li a,
+  .custom-navMenu-contact a {
+    font-size: 1.4rem;
+  }
+  .custom-navMenu ul li:not(:last-child) {
+    margin-right: 1rem;
+  }
+}
+@include media(1199px) {
+  .custom-nav::after {
+    display: none;
+  }
+  .custom-navMenu,
+  .custom-navMenu ul {
+    flex-wrap: wrap;
+  }
+  .custom-navMenu ul li,
+  .custom-navMenu-contact {
+    flex-basis: 100%;
+  }
+  .custom-navMenu ul li:not(:last-child) {
+    margin-right: 0;
+  }
+  .custom-navMenu ul li {
+    margin-bottom: 2rem;
+  }
+  .custom-navMenu {
+    justify-content: center;
+    text-align: center;
+    height: 100%;
+  }
+}
+@include media(767px) {
+  .custom-navLogo {
+    flex-wrap: wrap;
+  }
+  .custom-navLogo-leftCol {
+    flex-basis: 100%;
+    text-align: center;
+    margin-bottom: 2.4rem;
+  }
+  .custom-navLogo-rightColSearch input {
+    max-width: 22rem;
+  }
+  .custom-navLogo-rightCol {
+    gap: 2rem;
+  }
+  .custom-navLogo-rightColTicket a {
+    max-width: 11rem;
+  }
+  .custom-navLogo-rightColCountry img {
+    width: 3.5rem;
+    height: 3.5rem;
+  }
+}
+@include media(575px) {
+  .custom-navLogo-rightCol {
+    flex-wrap: wrap;
+  }
+  .custom-navLogo-rightColSearch {
+    flex-basis: 100%;
+  }
+  .custom-navLogo-rightColSearch input {
+    max-width: 100%;
+    width: 100%;
+  }
+  .custom-ham {
+    max-width: 5rem;
+    margin-left: auto;
+  }
+}
