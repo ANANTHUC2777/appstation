@@ -362,6 +362,10 @@ button:focus {
     grid-column: 1/-1;
     width: 100%;
   }
+
+  .grid-gallery .flex-div img {
+    height: 33.1rem;
+  }
 }
 /********* RETURN TO TOP *********/
 #return-to-top {
@@ -1064,6 +1068,10 @@ main {
 
   .banner-leftCol ul {
     flex-wrap: wrap;
+  }
+
+  .banner-wrap {
+    justify-content: center;
   }
 }
 .marquee-wrap {
